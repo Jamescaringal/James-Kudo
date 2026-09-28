@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#070914">
+<title>James Kudo</title>
+<meta name="description" content="James Kudo: tutorial, YouTube channel and script download.">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="bg" aria-hidden="true"></canvas>
+<div class="glow g1" aria-hidden="true"></div>
+<div class="glow g2" aria-hidden="true"></div>
+
+<main class="app">
+
+  <!-- HOME -->
+  <section class="view active" id="home">
+    <div class="hero">
+      <img class="logo" src="assets/logo.svg" alt="James Kudo logo" width="88" height="88">
+      <h1>James Kudo</h1>
+      <p class="lead">Learn it, watch it, download it. Everything you need in one place.</p>
+    </div>
+
+    <nav class="menu" aria-label="Main menu">
+      <button class="card big" data-go="tutorial">
+        <span class="ico"><svg viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3zM5 13.2v3.6c0 1.7 3.1 3.2 7 3.2s7-1.5 7-3.2v-3.6l-7 3.8-7-3.8z"/></svg></span>
+        <span class="txt"><b>Tutorial</b><small>Step-by-step video guide</small></span>
+        <span class="chev" aria-hidden="true">›</span>
+      </button>
+
+      <a class="card" id="ytCard" target="_blank" rel="noopener noreferrer" href="#">
+        <span class="ico yt"><svg viewBox="0 0 24 24"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2C.5 9 .5 12 .5 12s0 3 .5 4.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1c.5-1.8.5-4.8.5-4.8s0-3-.5-4.8zM9.7 15.5v-7l6 3.5-6 3.5z"/></svg></span>
+        <span class="txt"><b>YouTube</b><small>Visit the channel</small></span>
+        <span class="chev" aria-hidden="true">›</span>
+      </a>
+
+      <button class="card" data-go="download">
+        <span class="ico dl"><svg viewBox="0 0 24 24"><path d="M12 3v11.2l4.6-4.6L18 11l-6 6-6-6 1.4-1.4L11 14.200V3h1zM5 19h14v2H5z"/></svg></span>
+        <span class="txt"><b>Script Download</b><small>Get the latest script</small></span>
+        <span class="chev" aria-hidden="true">›</span>
+      </button>
+    </nav>
+  </section>
+
+  <!-- TUTORIAL -->
+  <section class="view" id="tutorial">
+    <button class="back" data-go="home">‹ Back</button>
+    <h2>Tutorial</h2>
+    <p class="sub">Watch the full guide before you start.</p>
+
+    <div class="glass player" id="player">
+      <img id="thumb" alt="" hidden>
+      <div class="ph" id="ph">
+        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+      </div>
+    </div>
+    <button class="btn primary" id="watchBtn">Watch Tutorial</button>
+    <a class="btn ghost" id="tutLink" target="_blank" rel="noopener noreferrer" href="#" hidden>Open on YouTube</a>
+  </section>
+
+  <!-- DOWNLOAD -->
+  <section class="view" id="download">
+    <button class="back" data-go="home">‹ Back</button>
+    <h2>Script Download</h2>
+    <p class="sub">Download the file or copy the code.</p>
+
+    <article class="glass dl-card">
+      <header>
+        <span class="file">JS</span>
+        <div>
+          <h3 id="sName"></h3>
+          <p id="sDesc"></p>
+        </div>
+      </header>
+      <ul class="meta">
+        <li><small>Version</small><b id="sVer"></b></li>
+        <li><small>Type</small><b id="sType"></b></li>
+        <li><small>Size</small><b id="sSize"></b></li>
+      </ul>
+      <pre class="code" tabindex="0"><code id="code"></code></pre>
+      <div class="row">
+        <button class="btn primary dlbtn" id="dlBtn">
+          <span class="fill"></span><span class="lbl">DOWNLOAD SCRIPT</span>
+        </button>
+        <button class="btn ghost" id="copyBtn">Copy Script</button>
+      </div>
+    </article>
+  </section>
+
+</main>
+
+<footer>© 2026 James Kudo. All rights reserved.</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
